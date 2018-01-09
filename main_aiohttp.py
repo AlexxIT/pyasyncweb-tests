@@ -5,7 +5,11 @@ from aiohttp import web
 
 
 async def get_sync(request):
-    time.sleep(5)
+    if 'before' in request.query:
+        await asyncio.sleep(float(request.query.get('before')))
+    time.sleep(float(request.query.get('sleep', 5)))
+    if 'after' in request.query:
+        await asyncio.sleep(float(request.query.get('after')))
     return web.Response(text='OK')
 
 

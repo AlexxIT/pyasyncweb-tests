@@ -9,7 +9,11 @@ app = Sanic()
 
 @app.route("/sync")
 async def get_sync(request):
-    time.sleep(5)
+    if 'before' in request.args:
+        await asyncio.sleep(float(request.args.get('before')))
+    time.sleep(float(request.args.get('sleep', 5)))
+    if 'after' in request.args:
+        await asyncio.sleep(float(request.args.get('after')))
     return text('OK')
 
 
