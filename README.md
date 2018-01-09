@@ -68,3 +68,73 @@ sanic default loop (good)
 15.025014400482178
 20.030269861221313
 ```
+
+# Test2
+
+default loop
+
+```
+$ python3 main_builtin.py 
+2018-01-09 19:22:41,834 INFO [__main__] Start connection
+2018-01-09 19:22:41,835 INFO [__main__] Receive
+2018-01-09 19:22:46,842 INFO [__main__] Write
+2018-01-09 19:22:46,842 INFO [__main__] Close
+2018-01-09 19:22:46,842 INFO [__main__] After Close
+2018-01-09 19:22:46,843 INFO [__main__] Start connection
+2018-01-09 19:22:46,844 INFO [__main__] Start connection
+2018-01-09 19:22:46,844 INFO [__main__] Receive
+2018-01-09 19:22:51,850 INFO [__main__] Write
+2018-01-09 19:22:51,851 INFO [__main__] Close
+2018-01-09 19:22:51,851 INFO [__main__] After Close
+2018-01-09 19:22:51,852 INFO [__main__] Start connection
+2018-01-09 19:22:51,853 INFO [__main__] Receive
+2018-01-09 19:22:56,860 INFO [__main__] Write
+2018-01-09 19:22:56,860 INFO [__main__] Close
+2018-01-09 19:22:56,861 INFO [__main__] After Close
+2018-01-09 19:22:56,862 INFO [__main__] Receive
+2018-01-09 19:23:01,869 INFO [__main__] Write
+2018-01-09 19:23:01,870 INFO [__main__] Close
+2018-01-09 19:23:01,870 INFO [__main__] After Close
+```
+
+```
+$ python3 test.py 
+2018-01-09 19:22:46,844 INFO [__main__] 5.013042688369751
+2018-01-09 19:22:51,852 INFO [__main__] 10.021281003952026
+2018-01-09 19:22:56,861 INFO [__main__] 15.030425786972046
+2018-01-09 19:23:01,871 INFO [__main__] 20.040003776550293
+```
+
+uvloop
+
+```
+$ python3 main_builtin_uvloop.py 
+2018-01-09 19:25:00,169 INFO [__main__] Start connection
+2018-01-09 19:25:00,169 INFO [__main__] Receive
+2018-01-09 19:25:05,175 INFO [__main__] Write
+2018-01-09 19:25:05,175 INFO [__main__] Close
+2018-01-09 19:25:05,176 INFO [__main__] After Close
+2018-01-09 19:25:05,176 INFO [__main__] Start connection
+2018-01-09 19:25:05,177 INFO [__main__] Start connection
+2018-01-09 19:25:05,178 INFO [__main__] Start connection
+2018-01-09 19:25:05,178 INFO [__main__] Receive
+2018-01-09 19:25:10,185 INFO [__main__] Write
+2018-01-09 19:25:10,185 INFO [__main__] Close
+2018-01-09 19:25:10,186 INFO [__main__] After Close
+2018-01-09 19:25:10,186 INFO [__main__] Receive
+2018-01-09 19:25:15,193 INFO [__main__] Write
+2018-01-09 19:25:15,193 INFO [__main__] Close
+2018-01-09 19:25:15,194 INFO [__main__] After Close
+2018-01-09 19:25:15,194 INFO [__main__] Receive
+2018-01-09 19:25:20,201 INFO [__main__] Write
+2018-01-09 19:25:20,202 INFO [__main__] Close
+2018-01-09 19:25:20,202 INFO [__main__] After Close
+```
+
+```
+$ python3 test.py 
+2018-01-09 19:25:05,176 INFO [__main__] 5.0111987590789795
+2018-01-09 19:25:20,203 INFO [__main__] 20.038110494613647
+2018-01-09 19:25:20,204 INFO [__main__] 20.0389666557312
+2018-01-09 19:25:20,204 INFO [__main__] 20.039414167404175
+```
